@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Weather App</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="weatherStyle.css">
+</head>
+
+<body>
+	<div class = "container-fluid text-center">
+		<div class = "jumbotron">
+			<h1>w e a t h e r </h1> 
+			<div class = "row"> 
+				<div id = "main">
+					<div class = "col-sm-4"></div>
+					<div class = "col-sm-4">
+						<img id = "weather_img" onclick = "displayWind()"/>
+						<p id = "wind"></p>
+						<p id = "location"></p>
+						<p id= "condition"></p>
+						<p id="temp"></p>
+					</div>
+					<div class = "col-sm-4"></div>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div class = "forecast" style = "display: none">
+					<div class = "col-sm-1"></div>
+					<div class = "col-sm-2">
+						<img id = "weather_img_0" onclick = "displayWind()"/>
+						<p id= "condition_0"></p>
+						<p id="temp_0"></p>
+					</div>
+					<div class = "col-sm-2" style = "background-color: pink">
+						<img id="weather_img_1"/>
+						<p id = "condition_1"></p>
+						<p id="temp_1"></p>
+					</div>
+					<div class = "col-sm-2" style = "background-color: #A3E0FF">
+						<img id = "weather_img_2"/>
+						<p id= "condition_2"></p>
+						<p id="temp_2"></p>
+					</div>
+					<div class = "col-sm-2" style = "background-color: #CCFFCC">
+						<img id = "weather_img_3"/>
+						<p id = "condition_3"></p>
+						<p id="temp_3"></p>
+					</div>
+					<div class = "col-sm-2" style = "background-color: #FFFFCC">
+						<img id = "weather_img_4"/>
+						<p id = "condition_4"></p>
+						<p id="temp_4"></p>
+					</div>
+					<div class = "col-sm-1"></div>
+				</div>	
+			</div>
+			<div><!-- Zipcode -->
+			</br>
+			<label for="zip">Zipcode:</label>
+			<input id="zip"/>
+			<button id = "enter_button" onclick="process();">enter</button>
+			<!--/Zipcode --></div>
+		</div>
+		<div class = "container-fluid text-right"><!-- Forecast -->
+			<button id = "forecast_button" onclick = "forecastFunction()">forecast</button></div>
+		
+	</div>
+	<div class = "container-fluid text-right">
+		<a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/> </a>
+	</div>
+
+	<script src="weather.js"></script>
+	<script id="weatherQuery" src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid = 2389646&format=json&callback=callbackFunction">
+</script>
+</body>
+</html>
