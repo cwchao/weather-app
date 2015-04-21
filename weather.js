@@ -117,7 +117,7 @@ var callbackFunction = function(data) {
     document.getElementById("condition").innerHTML = "today: " + cond.text;
     document.getElementById("temp").innerHTML = temp + "° F";
 
-    if ((cond.code == 3)  || (cond.code <= 4) || (cond.code == 45) || (cond.code == 47) || ((cond.code >= 37) && (cond.code <= 39))) {
+    if ((cond.code == 1) || (cond.code == 3)  || (cond.code == 4) || (cond.code == 45) || ((cond.code >= 37) && (cond.code <= 39))) {
     	document.getElementById("weather_img").src = "stormy.png";
     	defaultImage = "stormy.png";
     }
@@ -129,7 +129,7 @@ var callbackFunction = function(data) {
 		document.getElementById("weather_img").src = "partly_cloudy.png";
 		defaultImage = "partly_cloudy.png";
 	}
-	else if (((cond.code >= 9) && (cond.code <= 12)) || (cond.code == 40)) {
+	else if (((cond.code >= 8) && (cond.code <= 12)) || (cond.code == 40)) {
 		document.getElementById("weather_img").src = "rain.ico";
 		defaultImage = "rain.ico";
 	}
